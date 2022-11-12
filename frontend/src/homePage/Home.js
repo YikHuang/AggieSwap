@@ -1,3 +1,5 @@
+import CreateAccount from "./CreateAccount";
+
 
 function Home() {
   return (
@@ -6,11 +8,9 @@ function Home() {
         <h2>Description</h2>
       </div>
       <div className="radiusButton">
-        <a href="/swap" class="button">Start AggieSwap</a>
+        <a href="/swap" className="button">Start AggieSwap</a>
       </div>
-      <div className="links">
-        <a href="/">Create Account</a>
-      </div>
+      <CreateAccount />
     </>
   );
 }
