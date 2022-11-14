@@ -6,6 +6,7 @@ function Confirm() {
   const [payment, setPayment] = useSearchParams();
   const [transactionFee, setTransactionFee] = useState({fee: "", currency: ""});
   const [successfulDialog, setSuccessfulDialog] = useState(false);
+  const [failedDialog, setFailedDialog] = useState(false);
   const addrRef = useRef();
   const privateKeyRef = useRef();
 
@@ -46,8 +47,17 @@ function Confirm() {
         <div className="modal">
         <div className="overlay"></div>
         <div className="modal-content">
-          <h1 className="modal-text">Transaction Success !</h1>
+          <h1 className="modal-text">Transaction Success</h1>
           <a href="/wallet" className="close-modal">close</a>
+        </div>
+        </div>
+      )}
+      {failedDialog && (
+        <div className="modal">
+        <div className="overlay"></div>
+        <div className="modal-content">
+          <h1 className="modal-text">Transaction Failed</h1>
+          <a href="/swap" className="close-modal">close</a>
         </div>
         </div>
       )}
@@ -95,7 +105,12 @@ function Confirm() {
       .post(url, request)
       .then(res => {
         response = res.data;
-        setSuccessfulDialog(true);
+        if(response.isSuccessful == true){
+          setSuccessfulDialog(true);
+        }
+        else{
+          setFailedDialog(true);
+        }
       })
       .catch(error => {
         console.log(error);
