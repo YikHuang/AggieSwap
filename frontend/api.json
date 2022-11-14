@@ -1,0 +1,33 @@
+{
+    "createAccount response":
+    {
+        "accountAddr": "accountAddr1",
+        "privateKey":"dgsadfejdkla212342jlkj234"
+    },
+
+    "getCurrency response":
+    {
+        "amt": 3,
+        "currency":"AggieSwap"
+    },
+
+    "getTransacFee response":
+    {
+        "fee": 0.5,
+        "currency": "XRD"
+    },
+
+    "swap response":
+    {
+        "amt":1000,
+        "AggieSwpAmt": 5,
+        "isSuccessful": true
+    },
+
+    "getAccountInfo response":
+    {
+        "xrdAmt":1000,
+        "aggieSwapAmt": 5
+    }
+
+}
