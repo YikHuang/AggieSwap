@@ -12,6 +12,9 @@ function Swap() {
         <h3>XRD</h3>
         <input onChange={(e) => handlePaymentInput(e)} type="number" ref={paymentRef} className="transactionTextbox" />
       </div>
+      <div>
+        <h1>=&gt;</h1>
+      </div>
       <div className="transactionForm">
         <h3>AggieSwap</h3>
         <input type="number" className="transactionTextbox" value={payment.receivedAmt} readOnly></input>
