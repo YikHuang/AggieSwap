@@ -1,6 +1,6 @@
 
 function AccountInfo({ accountInfo }) {
-  if(accountInfo.addr !== "" && accountInfo.privateKey !== "" )
+  if(accountInfo.addr !== "" && accountInfo.privateKey !== "" ){
     return (
       <div>
         <h3>
@@ -12,6 +12,7 @@ function AccountInfo({ accountInfo }) {
       </div>
     );
   }
-  
+}
+
   export default AccountInfo;
   
