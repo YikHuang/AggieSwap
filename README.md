@@ -10,8 +10,7 @@
             1. Import apiEnv.json
             2. Put the response of the "api.json" file into the corresponing api
 
-- Demo Video
-- https://youtu.be/r2URW6lRSxg
+- Demo Video: https://youtu.be/r2URW6lRSxg
 
 
 ## Radix Engine
