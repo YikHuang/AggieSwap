@@ -1,5 +1,16 @@
 # AggieSwap
 
+## Frontend
+- To run Frontend (run by terminal)
+    1. Go to the frontend folder
+    2. npm install
+    3. npm start
+    4. For successfully testing, if the backend is not running, use Mockoon to mock the API
+        - Mockoon
+            1. Import apiEnv.json
+            2. Put the response of the "api.json" file into the corresponing api
+
+
 
 ## Radix Engine
 ### Installation
