@@ -4,6 +4,7 @@ import Navbar from './general/Navbar';
 import Home from './homePage/Home';
 import Swap from './swap/Swap';
 import Confirm from './confirm/Confirm';
+import Wallet from './wallet/Wallet';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/swap" element={<Swap />} />
             <Route path="/confirm" element={<Confirm />} />
+            <Route path="/wallet" element={<Wallet />} />
           </Routes>
         </div>
       </div>
