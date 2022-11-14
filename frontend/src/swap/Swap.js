@@ -18,7 +18,9 @@ function Swap() {
       </div>
       <Currency payment={payment}/>
       <div className="radiusButton">
-        <a href="/confirm" className="button">Buy</a>
+        <a href={"/confirm?paidAmt=" + payment.paidAmt + "&paidCurrency=" + payment.paidCurrency + 
+                "&receivedAmt=" + payment.receivedAmt + "&receivedCurrency=" + payment.receivedCurrency} 
+           className="button">Buy</a>
       </div>
     </>
   )
