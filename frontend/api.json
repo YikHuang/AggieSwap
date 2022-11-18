@@ -1,8 +1,17 @@
 {
+    "createAccount request":{
+        "apiName": "apiName"
+    },
+    
     "createAccount response":
     {
         "accountAddr": "accountAddr1",
         "privateKey":"dgsadfejdkla212342jlkj234"
+    },
+
+    "getCurrency request":{
+        "apiName": "apiName", 
+        "baseCur": 1000
     },
 
     "getCurrency response":
@@ -11,10 +20,24 @@
         "currency":"AggieSwap"
     },
 
+    "getTransacFee request":{
+        "apiName": "apiName"
+    },
+
     "getTransacFee response":
     {
         "fee": 0.5,
         "currency": "XRD"
+    },
+
+    "swap request":{
+        "apiName": "apiName", 
+        "accountAddr": "accountAddr", 
+        "privateKey": "privateKey", 
+        "amt": 1000, 
+        "fee": 12, 
+        "from": "paidCurrency", 
+        "to": "receivedCurrency"
     },
 
     "swap response":
@@ -22,6 +45,11 @@
         "amt":1000,
         "AggieSwpAmt": 5,
         "isSuccessful": true
+    },
+
+    "getAccountInfo request":{
+        "apiName": "apiName", 
+        "accountAddr": "address"
     },
 
     "getAccountInfo response":
