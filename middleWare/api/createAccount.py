@@ -36,12 +36,10 @@ def createAccount():
 
     # make reponse dictionary
     result_dict = json.dumps(result_dict)
-    result_dict = json.loads(result_dict)
+    response_json = json.loads(result_dict)
 
-    print(result_dict)
-    print(type(result_dict))
-
-    return result_dict
+    # JSON response
+    return response_json
 
 
 if __name__ == "__main__":
