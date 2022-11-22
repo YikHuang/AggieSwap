@@ -24,24 +24,26 @@ function Confirm() {
 
   return (
     <>
-      <div>
-        <h1>{paidAmt} {paidCurrency} =&gt; {receivedAmt} {receivedCurrency}</h1>
-      </div>
-      <div>
-        <h3>Transaction Fee: {transactionFee.fee} {transactionFee.currency}</h3>
-      </div>
-      <div>
-        <h3>Max Slippage: 0.3%</h3>
-      </div>
-      <div>
-        <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input>
-      </div>
-      <div>
-        <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input>
-      </div>
-      <div className="radiusButton">
-        <button onClick={(e) => SendSwapRequest(e)}>Confirm</button>
-        <a href="/swap" className="button">Cancel</a>
+      <div className="transactionForm">
+        <div>
+          <h1>{paidAmt} {paidCurrency} =&gt; {receivedAmt} {receivedCurrency}</h1>
+        </div>
+        <div>
+          <h3>Transaction Fee: {transactionFee.fee} {transactionFee.currency}</h3>
+        </div>
+        <div>
+          <h3>Max Slippage: 0.3%</h3>
+        </div>
+        <div>
+          <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input>
+        </div>
+        <div>
+          <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input>
+        </div>
+        <div>
+          <button className="btn btn-primary btn-xl" onClick={(e) => SendSwapRequest(e)}>Confirm</button>
+          <a href="/swap" className="btn btn-primary btn-xl">Cancel</a>
+        </div>
       </div>
       {successfulDialog && (
         <div className="modal">

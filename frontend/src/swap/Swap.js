@@ -9,21 +9,24 @@ function Swap() {
   return (
     <>
       <div>
-        <h3>XRD</h3>
-        <input onChange={(e) => handlePaymentInput(e)} type="number" ref={paymentRef} className="transactionTextbox" />
-      </div>
-      <div>
-        <h1>=&gt;</h1>
-      </div>
-      <div className="transactionForm">
-        <h3>AggieSwap</h3>
-        <input type="number" className="transactionTextbox" value={payment.receivedAmt} readOnly></input>
-      </div>
-      <Currency payment={payment}/>
-      <div className="radiusButton">
-        <a href={"/confirm?paidAmt=" + payment.paidAmt + "&paidCurrency=" + payment.paidCurrency + 
+        <div>
+          <h3>XRD</h3>
+          <input onChange={(e) => handlePaymentInput(e)} type="number" ref={paymentRef} className="transactionTextbox" />
+        </div>
+        <div>
+          <h1>=&gt;</h1>
+        </div>
+        {/* <div className="transactionForm"> */}
+        <div>
+          <h3>AggieSwap</h3>
+          <input type="number" className="transactionTextbox" value={payment.receivedAmt} readOnly></input>
+        </div>
+        <Currency payment={payment}/>
+        <div>
+          <a href={"/confirm?paidAmt=" + payment.paidAmt + "&paidCurrency=" + payment.paidCurrency + 
                 "&receivedAmt=" + payment.receivedAmt + "&receivedCurrency=" + payment.receivedCurrency} 
-           className="button">Buy</a>
+            className="btn btn-primary btn-xl">Buy</a>
+        </div>
       </div>
     </>
   )

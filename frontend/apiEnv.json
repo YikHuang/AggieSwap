@@ -1,1 +1,188 @@
-{"openapi":"3.0.0","info":{"title":"Demo API","version":"1.0.0"},"servers":[{"url":"http://localhost:3005/"}],"paths":{"/createAccount":{"post":{"description":"create account","responses":{"200":{"description":"Creates 10 random users, or the amount specified in the 'total' query param","content":{"application/json":{}},"headers":{"Access-Control-Allow-Origin":{"schema":{"type":"string"},"example":"*"}}}}}},"/getCurrency":{"post":{"description":"get currency","responses":{"200":{"description":"Creates 10 random users, or the amount specified in the 'total' query param","content":{"application/json":{}},"headers":{"Access-Control-Allow-Origin":{"schema":{"type":"string"},"example":"*"}}}}}},"/getTransacFee":{"post":{"description":"get transaction fee","responses":{"200":{"description":"Creates 10 random users, or the amount specified in the 'total' query param","content":{"application/json":{}},"headers":{"Access-Control-Allow-Origin":{"schema":{"type":"string"},"example":"*"}}}}}},"/swap":{"post":{"description":"swap","responses":{"200":{"description":"Creates 10 random users, or the amount specified in the 'total' query param","content":{"application/json":{}},"headers":{"Access-Control-Allow-Origin":{"schema":{"type":"string"},"example":"*"}}}}}},"/getAccountInfo":{"post":{"description":"Get Account Information","responses":{"200":{"description":"Creates 10 random users, or the amount specified in the 'total' query param","content":{"application/json":{}},"headers":{"Access-Control-Allow-Origin":{"schema":{"type":"string"},"example":"*"}}}}}}}}
+{
+  "uuid": "d9282b09-12c0-4ccb-a58f-c0275d4b6893",
+  "lastMigration": 24,
+  "name": "AggieSwap",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3005,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "9038c6c4-559f-44e7-82c7-0c5f1eb3c2f9",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "createAccount",
+      "responses": [
+        {
+          "uuid": "9b202ff3-f970-4fef-8eeb-36a0400821a8",
+          "body": "{\n  \"accountAddr\": \"accountAddr1\",\n  \"privateKey\": \"dasdfgsdfasdf\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "cf79e109-245f-4207-b3fd-1a1b806fb0f1",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "getCurrenc",
+      "responses": [
+        {
+          "uuid": "408ac70e-660e-417a-945c-c033524c7777",
+          "body": "{\n  \"amt\": 3,\n  \"currency\":\"AggieSwap\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "2b7770ea-ee1c-42c4-bfa7-630d015611de",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "getTransacFee",
+      "responses": [
+        {
+          "uuid": "6e8a5a72-5d62-459e-aae5-1550b20cfcc0",
+          "body": "{\n  \"fee\": 0.5,\n  \"currency\": \"XRD\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "c12b732e-8d1a-482a-a6f6-adf9b7d0bfaa",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "swap",
+      "responses": [
+        {
+          "uuid": "317693ec-998a-418b-8e91-ccbe734ed6c4",
+          "body": "{\n  \"amt\":1000,\n  \"AggieSwpAmt\": 5,\n  \"isSuccessful\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "24cf03e8-6cfa-418b-a71c-5907531103de",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "getAccountInfo",
+      "responses": [
+        {
+          "uuid": "ed908f25-a1d8-4439-9ebf-f2367a65a81b",
+          "body": "{\n  \"xrdAmt\":1000,\n  \"aggieSwapAmt\": 5\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [],
+  "proxyReqHeaders": [],
+  "proxyResHeaders": [],
+  "data": []
+}

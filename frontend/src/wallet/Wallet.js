@@ -15,8 +15,8 @@ function Wallet() {
       <div>
         <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input>
       </div>
-      <div className="radiusButton">
-        <button onClick={(e) => SendGetAccountInfo(e)}>Get Balance</button>
+      <div>
+        <button className="btn btn-primary btn-xl" onClick={(e) => SendGetAccountInfo(e)}>Get Balance</button>
       </div>
       <Balance balance={balance}/>
     </>
