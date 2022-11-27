@@ -43,7 +43,7 @@
       "uuid": "cf79e109-245f-4207-b3fd-1a1b806fb0f1",
       "documentation": "",
       "method": "post",
-      "endpoint": "getCurrenc",
+      "endpoint": "getCurrency",
       "responses": [
         {
           "uuid": "408ac70e-660e-417a-945c-c033524c7777",

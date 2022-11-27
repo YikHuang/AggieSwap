@@ -34,6 +34,10 @@ function Confirm() {
         <div>
           <h3>Max Slippage: 0.3%</h3>
         </div>
+        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+          <p class="text-white-75 mb-5"></p>        
+          <p class="text-white-75 mb-5">If the information above is right, please login again</p>        
+        </div>
         <div>
           <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input>
         </div>

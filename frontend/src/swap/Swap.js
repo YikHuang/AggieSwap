@@ -15,7 +15,7 @@ function Swap() {
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           {/* <h1>=&gt;</h1> */}
-          <img src="exchange.png" width="70px" height="70px" onerror="Image error" alt="" />
+          <img src="./exchange.png" width="70px" height="70px" />
         </div>
         {/* <div className="transactionForm"> */}
         <div>
@@ -23,6 +23,10 @@ function Swap() {
           <input type="number" className="transactionTextbox" value={payment.receivedAmt} readOnly></input>
         </div>
         <Currency payment={payment}/>
+      </div>
+      <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+        <p class="text-white-75 mb-5">1 XRD = 1.863 AG</p>
+        
       </div>
       <div class="flex-container">
           <a href={"/confirm?paidAmt=" + payment.paidAmt + "&paidCurrency=" + payment.paidCurrency + 
