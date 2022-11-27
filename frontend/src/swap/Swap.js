@@ -8,13 +8,14 @@ function Swap() {
 
   return (
     <>
-      <div>
+      <div class="flex-container container px-4 px-lg-5">  
         <div>
           <h3>XRD</h3>
           <input onChange={(e) => handlePaymentInput(e)} type="number" ref={paymentRef} className="transactionTextbox" />
         </div>
-        <div>
-          <h1>=&gt;</h1>
+        <div class="col-lg-3 col-md-6 text-center">
+          {/* <h1>=&gt;</h1> */}
+          <img src="exchange.png" width="70px" height="70px" onerror="Image error" alt="" />
         </div>
         {/* <div className="transactionForm"> */}
         <div>
@@ -22,11 +23,11 @@ function Swap() {
           <input type="number" className="transactionTextbox" value={payment.receivedAmt} readOnly></input>
         </div>
         <Currency payment={payment}/>
-        <div>
+      </div>
+      <div class="flex-container">
           <a href={"/confirm?paidAmt=" + payment.paidAmt + "&paidCurrency=" + payment.paidCurrency + 
                 "&receivedAmt=" + payment.receivedAmt + "&receivedCurrency=" + payment.receivedCurrency} 
             className="btn btn-primary btn-xl">Buy</a>
-        </div>
       </div>
     </>
   )

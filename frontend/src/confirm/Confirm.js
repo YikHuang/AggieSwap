@@ -24,7 +24,7 @@ function Confirm() {
 
   return (
     <>
-      <div className="transactionForm">
+      <div className=" flex-container2 container row-cols-md-auto text-center">
         <div>
           <h1>{paidAmt} {paidCurrency} =&gt; {receivedAmt} {receivedCurrency}</h1>
         </div>
@@ -40,11 +40,15 @@ function Confirm() {
         <div>
           <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input>
         </div>
-        <div>
-          <button className="btn btn-primary btn-xl" onClick={(e) => SendSwapRequest(e)}>Confirm</button>
-          <a href="/swap" className="btn btn-primary btn-xl">Cancel</a>
-        </div>
+        
       </div>
+      <div class="flex-container">
+        <button className="btn btn-primary btn-xl" onClick={(e) => SendSwapRequest(e)}>Confirm</button>
+        <a href="/swap" className="btn btn-primary btn-xl">Cancel</a>
+      </div>
+
+
+
       {successfulDialog && (
         <div className="modal">
         <div className="overlay"></div>

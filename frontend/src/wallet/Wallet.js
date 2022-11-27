@@ -9,16 +9,42 @@ function Wallet() {
 
   return (
     <>
-      <div>
-        <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input>
+      {/* <div class="flex-container2 container px-4 px-lg-5">
+        <div>
+          <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input>
+        </div>
+        <div>
+          <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input>
+        </div>
+        
       </div>
-      <div>
-        <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input>
-      </div>
-      <div>
+      <div class="flex-container2 container px-4 px-lg-5">
         <button className="btn btn-primary btn-xl" onClick={(e) => SendGetAccountInfo(e)}>Get Balance</button>
       </div>
-      <Balance balance={balance}/>
+      
+      <Balance balance={balance}/> */}
+
+
+
+      <div class="flex-container container px-4 px-lg-5">  
+        <div>
+          <h3>Account Address</h3>
+          <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input>
+        </div>
+        <div class="col-lg-3 row-cols-md-auto text-center">
+          {/* <h1>=&gt;</h1> */}
+          {/* <img src="exchange.png" width="70px" height="70px" onerror="Image error" alt="" /> */}
+        </div>
+        {/* <div className="transactionForm"> */}
+        <div>
+          <h3>Private Key</h3>
+          <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input>
+        </div>
+        <Balance balance={balance}/>
+      </div>
+      <div class="flex-container container px-4 px-lg-5">
+        <button className="btn btn-primary btn-xl" onClick={(e) => SendGetAccountInfo(e)}>Get Balance</button>
+      </div>
     </>
   )
 

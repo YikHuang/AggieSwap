@@ -42,11 +42,29 @@ body{
 .navbar a:hover {
   color: #f1356d;
 }
-.content {
+/* .content {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
+} */
+
+.flex-container {
+  margin: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.flex-container2 {
+  margin: 100px;
+
+  align-items: center;
+  justify-content: center;
+}
+/* .flex-container > div {
+  margin: 10px;
+  padding: 20px;
+} */
 
 
 /* .radiusButton a.button {
@@ -761,12 +779,12 @@ progress {
 .blockquote-footer::before {
   content: "— ";
 }
-/* 
+
 .img-fluid {
   max-width: 100%;
   height: auto;
 }
-
+/*
 .img-thumbnail {
   padding: 0.25rem;
   background-color: #fff;
@@ -798,8 +816,8 @@ progress {
 .container-md,
 .container-sm {
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
+  padding-right: var(--bs-gutter-x, 0.5rem);
+  padding-left: var(--bs-gutter-x, 0.5rem);
   margin-right: auto;
   margin-left: auto;
 }
@@ -3203,6 +3221,7 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #f4623a;
   border-color: #f4623a;
+  justify-content: center;
 }
 .btn-primary:hover {
   color: #252626;
