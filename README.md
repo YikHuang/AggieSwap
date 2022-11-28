@@ -49,6 +49,13 @@
 ### Pre-step
 - Install Radix Engine before running Flask Web application. See Radix Engine Pre-setp part
 
+- After installing Radix Engine, run the below commands
+    ```
+    resim reset
+    resim new-account
+    resim publish . 
+    ```
+
 ### Run
 - Run Flask web app 
 
