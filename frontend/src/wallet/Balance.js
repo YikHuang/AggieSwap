@@ -2,10 +2,10 @@
 function Balance({ balance }) {
   if(balance.xrdAmt !== "" || balance.aggieSwapAmt !== ""){
     return (
-      <div>
-        <h1>---- Account Balance ----</h1>
-        <h2>XRD : {balance.xrdAmt}</h2>
-        <h2>AggieSwap: {balance.aggieSwapAmt}</h2>
+      <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+        <p class="text-white-75 mb-5">---- Your Account Balance ----</p>
+        <p class="text-white-75 mb-5">XRD : {balance.xrdAmt}</p>
+        <p class="text-white-75 mb-5">AggieSwap: {balance.aggieSwapAmt}</p>
       </div>
     )
   }

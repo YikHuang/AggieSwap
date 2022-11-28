@@ -40,10 +40,12 @@ function Wallet() {
           <h3>Private Key</h3>
           <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input>
         </div>
-        <Balance balance={balance}/>
       </div>
       <div class="flex-container container px-4 px-lg-5">
         <button className="btn btn-primary btn-xl" onClick={(e) => SendGetAccountInfo(e)}>Get Balance</button>
+      </div>
+      <div>
+        <Balance balance={balance}/>
       </div>
     </>
   )
