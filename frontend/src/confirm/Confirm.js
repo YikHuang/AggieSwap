@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Axios from 'axios';
+import arrow from './arrow.png';
 
 function Confirm() {
   const [payment, setPayment] = useSearchParams();
@@ -24,14 +25,11 @@ function Confirm() {
 
   return (
     <>
-      <div className="flex-container2 container row-cols-md-auto text-center">
+      <div className="flex-container container row-cols-md-auto text-center">
         <div>
-          <h1>{paidAmt} {paidCurrency} =&gt; {receivedAmt} {receivedCurrency}</h1>
-        </div>
-        <div>
+          <h2>{paidAmt} {paidCurrency}<img src={arrow} width="28px" height="28px" />
+          {receivedAmt} {receivedCurrency}</h2>
           <h3>Transaction Fee: {transactionFee.fee} {transactionFee.currency}</h3>
-        </div>
-        <div>
           <h3>Max Slippage: 0.3%</h3>
         </div>
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
@@ -46,7 +44,7 @@ function Confirm() {
         </div>
         
       </div>
-      <div class="flex-container">
+      <div class="flex-container3">
         <button className="btn btn-primary btn-xl" onClick={(e) => SendSwapRequest(e)}>Confirm</button>
         <a href="/swap" className="btn btn-primary btn-xl">Cancel</a>
       </div>
