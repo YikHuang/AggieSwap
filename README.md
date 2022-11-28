@@ -46,7 +46,7 @@
 - Install Flask package
     - ```pip install flask```
 
-### Pre-setp
+### Pre-step
 - Install Radix Engine before running Flask Web application. See Radix Engine Pre-setp part
 
 ### Run
