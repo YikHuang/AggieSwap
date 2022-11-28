@@ -19,7 +19,11 @@ function Home() {
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">Connect Davis to the World!</p>
+                      <div class="text-white-75 mb-5">
+                        <p class="font-grp-1">Make the economy of Davis vitalize itself</p>
+                        <p class="font-grp-1">Connect the economy system of Davis to the world</p>
+                      </div>
+
                         <a href="/swap" class="btn btn-primary btn-xl">Start AggieSwap</a>
                         {/* <a class="btn btn-primary btn-xl" href="#about">Find Out More</a> */}
                         {/* <a href="/CreateAccount" class="btn btn-primary btn-xl">Create Account</a> */}
