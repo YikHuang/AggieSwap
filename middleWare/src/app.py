@@ -58,9 +58,11 @@ def get_component_value():
             ["resim", "publish", "../../radixEngine/davis/"],
             stdout=subprocess.PIPE 
         )
+    print("publish:",publish_result)
 
     # get [package] value
     for result_output in splitting_command_results(publish_result):
+        print("result_output:",result_output)
         if "New Package" in result_output:
             package_value = result_output.split(': ')
             package_value = str(package_value[1])
@@ -110,11 +112,12 @@ def get_component_value_swap():
 
 
 # Create Account 
-@app.route('/api/createAccount', methods=['POST'])
+@app.route('/createAccount', methods=['POST'])
 def create_account():
     client_req = request.get_json()
 
-    if client_req["createAccount request"]["apiName"] != "apiName":
+    if client_req["apiName"] != "createAccount":
+        print("HI:")
         return Response(
                 "Wrong createAccount request",
                 status=400,
@@ -146,12 +149,15 @@ def create_account():
 
     # Make reponse dictionary
     response_json = conver_to_JSON(result_dict)
+    res = Response(response_json)
+    res.headers['Access-Control-Allow-Origin'] = '*'
+
 
     # JSON response
-    return response_json
+    return res
 
 # Get Currency 
-@app.route('/api/getCurrency', methods=['POST'])
+@app.route('/getCurrency', methods=['POST'])
 def get_currency():
     global component_value
     print('component_value : ', component_value)
@@ -200,7 +206,7 @@ def get_currency():
     return response_json
 
 # Get Transaction Fee
-@app.route('/api/getTransacFee', methods=['POST'])
+@app.route('/getTransacFee', methods=['POST'])
 def get_transac_fee():
     global component_value
     client_req = request.get_json()
@@ -241,7 +247,7 @@ def get_transac_fee():
     return response_json
 
 # Swap
-@app.route('/api/swap', methods=['POST'])
+@app.route('/swap', methods=['POST'])
 def swap():
     global component_value
     client_req = request.get_json()
@@ -331,7 +337,7 @@ def swap():
     return response_json
 
 # Get Account Information
-@app.route('/api/getAccountInfo', methods=['POST'])
+@app.route('/getAccountInfo', methods=['POST'])
 def get_account_info():
     client_req = request.get_json()
 
