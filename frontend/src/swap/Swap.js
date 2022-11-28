@@ -27,10 +27,11 @@ function Swap() {
         <p class="text-white-75 mb-5"><Currency payment={payment}/></p>
         
       </div>
-      <div class="flex-container">
+      <div class="flex-container2">
           <a href={"/confirm?paidAmt=" + payment.paidAmt + "&paidCurrency=" + payment.paidCurrency + 
                 "&receivedAmt=" + payment.receivedAmt + "&receivedCurrency=" + payment.receivedCurrency} 
             className="btn btn-primary btn-xl">Buy</a>
+            <a href="/swap" className="btn btn-primary btn-xl">Cancel</a>
       </div>
     </div>
   )
