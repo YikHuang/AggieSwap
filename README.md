@@ -39,3 +39,20 @@
 
 - Full Tutorial:
     - https://www.youtube.com/watch?v=Mu8L-BJFfQM
+
+
+## Middleware
+### Installation
+- Install Flask package
+    - ```pip install flask```
+
+### Pre-setp
+- Install Radix Engine before running Flask Web application. See Radix Engine Pre-setp part
+
+### Run
+- Run Flask web app 
+
+    ```
+     cd middleWare/src
+     flask run -p 3008
+     ```
