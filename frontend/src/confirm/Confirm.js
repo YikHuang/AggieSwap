@@ -54,7 +54,7 @@ function Confirm() {
 
 
       {successfulDialog && (
-        <div className="modal">
+        <div className="modal-popup">
         <div className="overlay"></div>
         <div className="modal-content">
           <h1 className="modal-text">Transaction Success</h1>
@@ -63,7 +63,7 @@ function Confirm() {
         </div>
       )}
       {failedDialog && (
-        <div className="modal">
+        <div className="modal-popup">
         <div className="overlay"></div>
         <div className="modal-content">
           <h1 className="modal-text">Transaction Failed</h1>
