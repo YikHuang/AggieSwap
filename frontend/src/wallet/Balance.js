@@ -1,4 +1,5 @@
 
+
 function Balance({ balance }) {
   if(balance.xrdAmt !== "" || balance.aggieSwapAmt !== ""){
     return (
