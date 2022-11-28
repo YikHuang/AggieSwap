@@ -2,39 +2,37 @@ import Currency from "./Currency"
 import { useState, useRef } from "react";
 import Axios from 'axios';
 import exchange from './exchange.png';
-// import Confirm from '../confirm/Confirm'
 
 function Swap() {
   const [payment, setPayment] = useState({paidAmt: 0, paidCurrency: "", receivedAmt: "", receivedCurrency: "", rate: 0});
   const paymentRef = useRef();
 
   return (
-    <>
+    <div class="center" >
       <div class="flex-container container px-4 px-lg-5">  
-        <div>
-          <h3>XRD</h3>
+        <div id="warpper-transac-text-box">
           <input onChange={(e) => handlePaymentInput(e)} type="number" ref={paymentRef} className="transactionTextbox" />
+          <span id="currency-text">XRD</span>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
-          {/* <h1>=&gt;</h1> */}
           <img src={exchange} width="50px" height="50px" />
         </div>
-        {/* <div className="transactionForm"> */}
-        <div>
-          <h3>AggieSwap</h3>
+        <div id="warpper-transac-text-box">
           <input type="number" className="transactionTextbox" value={payment.receivedAmt} readOnly></input>
+          <span id="currency-text">AggieToken</span>
         </div>
         <Currency payment={payment}/>
       </div>
       <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
         <p class="text-white-75 mb-5">1 XRD = 1.863 AG</p>
+        
       </div>
       <div class="flex-container">
           <a href={"/confirm?paidAmt=" + payment.paidAmt + "&paidCurrency=" + payment.paidCurrency + 
                 "&receivedAmt=" + payment.receivedAmt + "&receivedCurrency=" + payment.receivedCurrency} 
             className="btn btn-primary btn-xl">Buy</a>
       </div>
-    </>
+    </div>
   )
 
   function handlePaymentInput(e){
