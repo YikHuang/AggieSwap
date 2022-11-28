@@ -58,7 +58,6 @@ def get_component_value():
             ["resim", "publish", "../../radixEngine/davis/"],
             stdout=subprocess.PIPE 
         )
-    print("publish:",publish_result)
 
     # get [package] value
     for result_output in splitting_command_results(publish_result):
@@ -77,7 +76,6 @@ def get_component_value():
             tmp_component_value = result_output.split(': ')
             tmp_component_value = str(tmp_component_value[1])
 
-    print('New component value: ', tmp_component_value)
     return tmp_component_value
 
 
@@ -117,7 +115,6 @@ def create_account():
     client_req = request.get_json()
 
     if client_req["apiName"] != "createAccount":
-        print("HI:")
         return Response(
                 "Wrong createAccount request",
                 status=400,
@@ -149,12 +146,9 @@ def create_account():
 
     # Make reponse dictionary
     response_json = conver_to_JSON(result_dict)
-    res = Response(response_json)
-    res.headers['Access-Control-Allow-Origin'] = '*'
-
 
     # JSON response
-    return res
+    return response_json
 
 # Get Currency 
 @app.route('/getCurrency', methods=['POST'])
