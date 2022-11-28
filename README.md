@@ -53,7 +53,7 @@
     ```
     resim reset
     resim new-account
-    resim publish . 
+	resim publish radixEngine/davis/
     ```
 
 ### Run
