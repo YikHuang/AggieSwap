@@ -1,6 +1,7 @@
 import Currency from "./Currency"
 import { useState, useRef } from "react";
 import Axios from 'axios';
+import exchange from './exchange.png';
 
 function Swap() {
   const [payment, setPayment] = useState({paidAmt: 0, paidCurrency: "", receivedAmt: "", receivedCurrency: "", rate: 0});
@@ -15,7 +16,7 @@ function Swap() {
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           {/* <h1>=&gt;</h1> */}
-          <img src="./exchange.png" width="70px" height="70px" />
+          <img src={exchange} width="50px" height="50px" />
         </div>
         {/* <div className="transactionForm"> */}
         <div>
