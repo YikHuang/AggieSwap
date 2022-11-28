@@ -24,7 +24,7 @@ function Confirm() {
 
   return (
     <>
-      <div className=" flex-container2 container row-cols-md-auto text-center">
+      <div className="flex-container2 container row-cols-md-auto text-center">
         <div>
           <h1>{paidAmt} {paidCurrency} =&gt; {receivedAmt} {receivedCurrency}</h1>
         </div>
