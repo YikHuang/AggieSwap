@@ -41,8 +41,9 @@ function Wallet() {
             <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input>
           </div>
         </div>
-        <div class="flex-container container px-4 px-lg-5">
+        <div class="flex-container2 container px-4 px-lg-5">
           <button className="btn btn-primary btn-xl" onClick={(e) => SendGetAccountInfo(e)}>Get Balance</button>
+          <a href="/" className="btn btn-primary btn-xl">Cancel</a>
         </div>
         <div>
           <Balance balance={balance}/>

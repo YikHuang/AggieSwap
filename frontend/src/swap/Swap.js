@@ -31,7 +31,7 @@ function Swap() {
           <a href={"/confirm?paidAmt=" + payment.paidAmt + "&paidCurrency=" + payment.paidCurrency + 
                 "&receivedAmt=" + payment.receivedAmt + "&receivedCurrency=" + payment.receivedCurrency} 
             className="btn btn-primary btn-xl">Buy</a>
-            <a href="/swap" className="btn btn-primary btn-xl">Cancel</a>
+            <a href="/" className="btn btn-primary btn-xl">Cancel</a>
       </div>
     </div>
   )
