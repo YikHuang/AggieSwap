@@ -11,7 +11,6 @@ function Swap() {
 
     
    
-      
     <div class="center" >
       <div class="flex-container container px-4 px-lg-5">  
       <h1 class="text-white font-weight-bold">Swap</h1>
@@ -39,6 +38,8 @@ function Swap() {
             <a href="/" className="btn btn-primary btn-xl">Cancel</a>
       </div>
     </div>
+
+    
   )
 
   function handlePaymentInput(e){
