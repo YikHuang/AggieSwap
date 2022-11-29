@@ -27,6 +27,7 @@ function Wallet() {
 
       <div class="center" >
         <div class="flex-container2 container row-cols-md-auto text-center">  
+        <h1 class="text-white font-weight-bold">Wallet</h1>
           <div id="warpper-transac-text-box">
             {/* <h3>Account Address</h3> */}
             <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input>
