@@ -45,6 +45,7 @@
 ### Installation
 - Install Flask package
     - ```pip install flask```
+    - ```pip install Flask-Cors```
 
 ### Pre-step
 - Install Radix Engine before running Flask Web application. See Radix Engine Pre-setp part
