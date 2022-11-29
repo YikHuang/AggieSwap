@@ -110,6 +110,12 @@ def get_component_value_swap():
     print('New component value: ', tmp_component_value)
     return tmp_component_value
 
+# Add Response header parameters and values
+def make_JSON_response(r)
+    r.headers['Access-Control-Allow-Origin'] = '*'
+
+    return r  
+
 # Create Account 
 @app.route('/createAccount', methods=['POST'])
 def create_account():
@@ -147,11 +153,9 @@ def create_account():
 
     # Make reponse dictionary
     response_json = conver_to_JSON(result_dict)
-    r = make_response(response_json)
-    r.headers['Access-Control-Allow-Origin'] = '*'
 
     # JSON response
-    return r
+    return make_JSON_response(response_json)
 
 # Get Currency 
 @app.route('/getCurrency', methods=['POST'])
@@ -198,11 +202,9 @@ def get_currency():
     result_dict['amt'] = str(currency_value)
 
     response_json = conver_to_JSON(result_dict)
-    r = make_response(response_json)
-    r.headers['Access-Control-Allow-Origin'] = '*'
 
-    # JSON response
-    return r
+    # JSON reponse
+    return make_JSON_response(response_json)
 
 # Get Transaction Fee
 @app.route('/getTransacFee', methods=['POST'])
@@ -243,7 +245,7 @@ def get_transac_fee():
     response_json = conver_to_JSON(result_dict)
 
     # JSON response
-    return response_json
+    return make_JSON_response(response_json)
 
 # Swap
 @app.route('/swap', methods=['POST'])
@@ -333,7 +335,7 @@ def swap():
     response_json = conver_to_JSON(result_dict)
 
     # JSON response
-    return response_json
+    return make_JSON_response(response_json)
 
 # Get Account Information
 @app.route('/getAccountInfo', methods=['POST'])
@@ -403,8 +405,9 @@ def get_account_info():
     response_json = conver_to_JSON(result_dict)
 
     # JSON response
-    return response_json
+    return make_JSON_response(response_json)
 
+# For initialization Radix engine
 component_value = get_component_value()
 
 @app.route('/')
