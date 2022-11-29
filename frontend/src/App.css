@@ -70,6 +70,7 @@ body{
   align-items: center;
   justify-content: center;
 }
+
 /* .flex-container > div {
   margin: 10px;
   padding: 20px;
@@ -110,7 +111,19 @@ body{
   cursor: pointer;
   color: #f5c2c7;
 }
+.round-box {
+  background-color: #18172f;
+  /* padding: 20px; */
+  width: 500px;
+  height: 500px;
+  border-radius: 80px;
 
+   /* border: 5px solid rgb(11, 7, 68);
+  border-radius: 100px;
+  margin : 50px;
+  width : 50%;
+  height : 500px; */
+}
 #warpper-transac-text-box {
   display: inline-block;
   position: relative;
@@ -120,7 +133,7 @@ body{
   color: #252626;
   padding-left: 20px;
   padding-right:20px;
-  font-size: 36px;
+  font-size: 25px;
   font-weight: bold;
   margin: 0;
   position: absolute;
@@ -137,16 +150,15 @@ body{
   transform: translate(-50%, -50%);
 }
 .transactionTextbox {
-  height: 400 px;
+  height: 70px;
   background-color: #a2a1a3;
   border-radius: 16px;
   text-decoration: none;
-  font-size: 36px;
+  font-size: 35px;
   font-weight: 900;
   margin: 10px auto;
   padding: 14px;
 }
-
 .transactionForm {
   margin: 10px auto;
 }
@@ -345,17 +357,7 @@ h2, .h2{
   text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
 }
 
-.round-box {
-  background-color: #18172f;
-  /* padding: 20px; */
-  width: 500px;
-  height: 500px;
-  /* border: 5px solid rgb(11, 7, 68);
-  border-radius: 100px;
-  margin : 50px;
-  width : 50%;
-  height : 500px; */
-}
+
 
 /*
 @media (min-width: 1200px) {
@@ -11562,7 +11564,7 @@ body {
 }
 
 .btn-xl {
-  padding: 1.25rem 2.25rem;
+  padding: 0.9rem 2rem;
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
