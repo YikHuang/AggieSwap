@@ -2,12 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Axios from 'axios';
 import arrow from './arrow.png';
+import TransactionFee from './TransactionFee';
 
 function Confirm() {
   const [payment, setPayment] = useSearchParams();
   const [transactionFee, setTransactionFee] = useState({fee: "", currency: ""});
   const [successfulDialog, setSuccessfulDialog] = useState(false);
   const [failedDialog, setFailedDialog] = useState(false);
+  const [transactionFeeButton, setTransactionFeeButton] = useState(true);
   const addrRef = useRef();
   const privateKeyRef = useRef();
 
@@ -16,12 +18,6 @@ function Confirm() {
   const receivedAmt = payment.get('receivedAmt');
   const receivedCurrency = payment.get('receivedCurrency');
 
-  useEffect(() => {
-    if(transactionFee.fee === ""){
-      SendGetTransacFeeRequest();
-    }
-  })
-
 
   return (
     <>
@@ -29,7 +25,10 @@ function Confirm() {
         <div>
           <h2>{paidAmt} {paidCurrency}<img src={arrow} width="28px" height="28px" />
           {receivedAmt} {receivedCurrency}</h2>
-          <h3>Transaction Fee: {transactionFee.fee} {transactionFee.currency}</h3>
+          <h3>
+            Transaction Fee: <TransactionFee transactionFee={transactionFee}/>
+            {transactionFeeButton && <button onClick={(e) => SendGetTransacFeeRequest(e)}>Show Transaction Fee</button>}
+          </h3>
           <h3>Max Slippage: 0.3%</h3>
         </div>
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
@@ -64,7 +63,7 @@ function Confirm() {
         <div className="modal-popup">
         <div className="overlay"></div>
         <div className="modal-content">
-          <h1 className="modal-text">Transaction Failed</h1>
+          <h2 className="modal-text">Transaction Failed</h2>
           <a href="/swap" className="close-modal">close</a>
         </div>
         </div>
@@ -87,6 +86,7 @@ function Confirm() {
       .then(res => {
         response = res.data;
         setTransactionFee({fee: response.fee, currency: response.currency});
+        setTransactionFeeButton(false);
       })
       .catch(error => {
         console.log(error);

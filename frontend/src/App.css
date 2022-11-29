@@ -117,7 +117,7 @@ body{
 }
 #currency-text {
   right: 0;
-  color: #ffffff;
+  color: #252626;
   padding-left: 20px;
   padding-right:20px;
   font-size: 36px;
@@ -335,6 +335,28 @@ h1, .h1 {
 	-webkit-text-stroke-color: black; */
   text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
 }
+
+h2, .h2{
+  margin: 50px;
+  font-size: calc(1.375rem + 1.5vw);
+  /* -webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: black; */
+  color: #ffffff;
+  text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+}
+
+.round-box {
+  background-color: #18172f;
+  /* padding: 20px; */
+  width: 500px;
+  height: 500px;
+  /* border: 5px solid rgb(11, 7, 68);
+  border-radius: 100px;
+  margin : 50px;
+  width : 50%;
+  height : 500px; */
+}
+
 /*
 @media (min-width: 1200px) {
   h1, .h1 {
