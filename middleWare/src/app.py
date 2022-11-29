@@ -23,9 +23,8 @@ handler.setFormatter(formatter)
 logger.addHandler(handler)
 logger.setLevel(logging.DEBUG)
 
-# Global value
+# Global value for initilization Radix
 component_value = ""
-# initilization
 
 
 def splitting_command_results(input_str):
@@ -416,7 +415,3 @@ component_value = get_component_value()
 @app.route('/')
 def aggieSwap_midware():
     return "AggieSwap middleware server"
-
-
-
-
