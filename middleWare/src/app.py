@@ -61,7 +61,6 @@ def get_component_value():
 
     # get [package] value
     for result_output in splitting_command_results(publish_result):
-        print("result_output:",result_output)
         if "New Package" in result_output:
             package_value = result_output.split(': ')
             package_value = str(package_value[1])
@@ -158,8 +157,8 @@ def get_currency():
 
     client_req = request.get_json()
 
-    if( client_req["getCurrency request"]["apiName"] != "apiName" or 
-        client_req["getCurrency request"]["baseCur"] != "XRD" ):
+    if( client_req["apiName"] != "getCurrency" or 
+        client_req["baseCur"] != "XRD" ):
         return Response(
                 "Wrong createAccount request",
                 status=400,
@@ -205,7 +204,7 @@ def get_transac_fee():
     global component_value
     client_req = request.get_json()
 
-    if client_req["getTransacFee request"]["apiName"] != "apiName":
+    if client_req["apiName"] != "getTransacFee":
         return Response(
                 "Wrong getTransacFee request",
                 status=400,
@@ -246,13 +245,13 @@ def swap():
     global component_value
     client_req = request.get_json()
 
-    if(client_req["swap request"]["apiName"] != "apiName" or
-       client_req["swap request"]["accountAddr"] == "" or 
-       client_req["swap request"]["privateKey"] == "" or 
-       client_req["swap request"]["amt"] == "" or 
-       client_req["swap request"]["fee"] == "" or 
-       client_req["swap request"]["from"] == "" or 
-       client_req["swap request"]["to"] == "") :
+    if(client_req["apiName"] != "swap" or
+       client_req["accountAddr"] == "" or 
+       client_req["privateKey"] == "" or 
+       client_req["amt"] == "" or 
+       client_req["fee"] == "" or 
+       client_req["from"] == "" or 
+       client_req["to"] == "") :
         return Response(
                 "Wrong createAccount request",
                 status=400,
@@ -335,14 +334,14 @@ def swap():
 def get_account_info():
     client_req = request.get_json()
 
-    if ( client_req["getAccountInfo request"]["apiName"] != "apiName" and 
-         client_req["getAccountInfo request"]["apiName"] != "" ):
+    if ( client_req["apiName"] != "getAccountInfo" or 
+         client_req["accountAddr"] == "" ):
         return Response(
                 "Wrong getAccountInfo request",
                 status=400,
             )
 
-    account_info = client_req["getAccountInfo request"]["accountAddr"]
+    account_info = client_req["accountAddr"]
 
     print('account info : ', account_info)
 
