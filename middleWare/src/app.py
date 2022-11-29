@@ -111,10 +111,13 @@ def get_component_value_swap():
     return tmp_component_value
 
 # Add Response header parameters and values
-def make_JSON_response(r)
+def make_JSON_response(raw_reponse):
+    r = make_response(raw_reponse)
     r.headers['Access-Control-Allow-Origin'] = '*'
 
-    return r  
+    print(r)
+
+    return r
 
 # Create Account 
 @app.route('/createAccount', methods=['POST'])
