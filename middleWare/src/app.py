@@ -174,11 +174,12 @@ def get_currency():
                 status=400,
             )
 
-    req_baseCur = client_req["getCurrency request"]["baseCur"]
+    req_baseCur = client_req["baseCur"]
 
     # Dictionary for JSON reponse 
     result_dict = { 
         "amt" : "",
+        "currency":"AggieToken"
     }
 
     if component_value == "":
@@ -192,6 +193,7 @@ def get_currency():
             stdout=subprocess.PIPE 
         )
 
+    currency_value = "1"
     for result_str in splitting_command_results(get_price_result):
         if "Decimal(" in result_str:
             tmp_component_value = result_str.split('("')
@@ -234,6 +236,7 @@ def get_transac_fee():
             stdout=subprocess.PIPE 
         )
 
+    tx_fee_value = "0"
     for result_str in splitting_command_results(get_tx_fee_result):
         if "Decimal(" in result_str:
             tmp_component_value = result_str.split('("')
@@ -274,10 +277,10 @@ def swap():
         "isSuccessful" : "",
     }
 
-    account_info_value = client_req["swap request"]["accountAddr"]
-    privateKey_value = client_req["swap request"]["privateKey"]
-    buy_amt = client_req["swap request"]["amt"]
-    tx_fee = client_req["swap request"]["fee"]
+    account_info_value = client_req["accountAddr"]
+    privateKey_value = client_req["privateKey"]
+    buy_amt = client_req["amt"]
+    tx_fee = client_req["fee"]
     #xrd_from = client_req["swap request"]["from"]
     #xrd_to = client_req["swap request"]["to"]
 
@@ -344,8 +347,8 @@ def swap():
 def get_account_info():
     client_req = request.get_json()
 
-    if ( client_req["apiName"] != "getAccountInfo" or 
-         client_req["accountAddr"] == "" ):
+    if ( client_req["apiName"] != "getAccountInfo" or client_req["accountAddr"] == "" ):
+        
         return Response(
                 "Wrong getAccountInfo request",
                 status=400,
