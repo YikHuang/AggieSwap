@@ -63,7 +63,7 @@ function Confirm() {
         <div className="modal-popup">
         <div className="overlay"></div>
         <div className="modal-content">
-          <h1 className="modal-text">Transaction Failed</h1>
+          <h2 className="modal-text">Transaction Failed</h2>
           <a href="/swap" className="close-modal">close</a>
         </div>
         </div>
