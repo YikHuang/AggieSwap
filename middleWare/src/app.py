@@ -194,6 +194,7 @@ def get_currency():
             stdout=subprocess.PIPE 
         )
 
+    currency_value = "1"
     for result_str in splitting_command_results(get_price_result):
         if "Decimal(" in result_str:
             tmp_component_value = result_str.split('("')
@@ -236,6 +237,7 @@ def get_transac_fee():
             stdout=subprocess.PIPE 
         )
 
+    tx_fee_value = "0"
     for result_str in splitting_command_results(get_tx_fee_result):
         if "Decimal(" in result_str:
             tmp_component_value = result_str.split('("')
@@ -346,8 +348,8 @@ def swap():
 def get_account_info():
     client_req = request.get_json()
 
-    if ( client_req["apiName"] != "getAccountInfo" or 
-         client_req["accountAddr"] == "" ):
+    if ( client_req["apiName"] != "getAccountInfo" or client_req["accountAddr"] == "" ):
+        
         return Response(
                 "Wrong getAccountInfo request",
                 status=400,
