@@ -24,22 +24,25 @@ function Wallet() {
       
       <Balance balance={balance}/> */}
 
-
-      <div class="center" >
+      <div class="center">
         <div class="flex-container2 container row-cols-md-auto text-center">  
         <h1 class="text-white font-weight-bold">Wallet</h1>
           <div id="warpper-transac-text-box">
             {/* <h3>Account Address</h3> */}
-            <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input>
+            {/* <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input> */}
+            <input type="text" ref={addrRef} className="transactionTextbox" />
+            <span id="currency-text">ID</span>
           </div>
           <div class="col-lg-3 row-cols-md-auto text-center">
             {/* <h1>=&gt;</h1> */}
             {/* <img src="exchange.png" width="70px" height="70px" onerror="Image error" alt="" /> */}
           </div>
           {/* <div className="transactionForm"> */}
-          <div>
+          <div id="warpper-transac-text-box">
             {/* <h3>Private Key</h3> */}
-            <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input>
+            {/* <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input> */}
+            <input type="text" ref={privateKeyRef} className="transactionTextbox" />
+            <span id="currency-text">Password</span>
           </div>
         </div>
         <div class="flex-container2 container px-4 px-lg-5">
