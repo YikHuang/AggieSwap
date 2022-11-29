@@ -35,11 +35,15 @@ function Confirm() {
           <p class="text-white-75 mb-5"></p>        
           <p class="text-white-75 mb-5">If the information above is right, please login again</p>        
         </div>
-        <div>
-          <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input>
+        <div id="warpper-transac-text-box">
+          {/* <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input> */}
+          <input type="text" ref={addrRef} className="transactionTextbox" />
+          <span id="currency-text">ID</span>
         </div>
-        <div>
-          <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input>
+        <div id="warpper-transac-text-box">
+          {/* <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input> */}
+          <input type="text" ref={privateKeyRef} className="transactionTextbox" />
+            <span id="currency-text">Password</span>
         </div>
         
       </div>
