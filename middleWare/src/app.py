@@ -175,11 +175,12 @@ def get_currency():
                 status=400,
             )
 
-    req_baseCur = client_req["getCurrency request"]["baseCur"]
+    req_baseCur = client_req["baseCur"]
 
     # Dictionary for JSON reponse 
     result_dict = { 
         "amt" : "",
+        "currency":"AggieToken"
     }
 
     if component_value == "":
@@ -275,10 +276,10 @@ def swap():
         "isSuccessful" : "",
     }
 
-    account_info_value = client_req["swap request"]["accountAddr"]
-    privateKey_value = client_req["swap request"]["privateKey"]
-    buy_amt = client_req["swap request"]["amt"]
-    tx_fee = client_req["swap request"]["fee"]
+    account_info_value = client_req["accountAddr"]
+    privateKey_value = client_req["privateKey"]
+    buy_amt = client_req["amt"]
+    tx_fee = client_req["fee"]
     #xrd_from = client_req["swap request"]["from"]
     #xrd_to = client_req["swap request"]["to"]
 
