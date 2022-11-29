@@ -1,6 +1,7 @@
 import subprocess
 from flask import Flask
 from flask import request, Response
+from flask import make_response
 
 # For JSON request & response 
 import json
@@ -8,9 +9,11 @@ import json
 import logging
 import sys
 import os
+from flask_cors import CORS
 
 # Basic Flask settings
 app = Flask(__name__)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Logging
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
@@ -107,7 +110,6 @@ def get_component_value_swap():
     print('New component value: ', tmp_component_value)
     return tmp_component_value
 
-
 # Create Account 
 @app.route('/createAccount', methods=['POST'])
 def create_account():
@@ -145,9 +147,11 @@ def create_account():
 
     # Make reponse dictionary
     response_json = conver_to_JSON(result_dict)
+    r = make_response(response_json)
+    r.headers['Access-Control-Allow-Origin'] = '*'
 
     # JSON response
-    return response_json
+    return r
 
 # Get Currency 
 @app.route('/getCurrency', methods=['POST'])
@@ -194,9 +198,11 @@ def get_currency():
     result_dict['amt'] = str(currency_value)
 
     response_json = conver_to_JSON(result_dict)
+    r = make_response(response_json)
+    r.headers['Access-Control-Allow-Origin'] = '*'
 
     # JSON response
-    return response_json
+    return r
 
 # Get Transaction Fee
 @app.route('/getTransacFee', methods=['POST'])
@@ -404,6 +410,7 @@ component_value = get_component_value()
 @app.route('/')
 def aggieSwap_midware():
     return "AggieSwap middleware server"
+
 
 
 
