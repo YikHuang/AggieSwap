@@ -413,6 +413,7 @@ h2, .h2{
 	-webkit-text-stroke-color: black; */
   color: #ffffff;
   text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+  
 }
 
 
@@ -11649,7 +11650,7 @@ hr.divider {
 }
 
 hr.divider-light {
-  background-color: #fff;
+  background-color: #f4623a;
 }
 
 #mainNav {
