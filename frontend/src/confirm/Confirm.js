@@ -55,9 +55,13 @@ function Confirm() {
       {successfulDialog && (
         <div className="modal-popup">
         <div className="overlay"></div>
-        <div className="modal-content">
+        <div className="modal-content2 flex-container">
           <h3 className="modal-text">Transaction Success</h3>
-          <a href="/swap" className="close-modal">close</a>
+          <div className="flex-container2">
+            <a href="/" className="btn btn-primary btn-m2">home</a>
+            <a href="/swap" className="btn btn-primary btn-m2">swap</a>
+            <a href="/wallet" className="btn btn-primary btn-m2">wallet</a>
+          </div>
         </div>
         </div>
       )}
@@ -66,7 +70,11 @@ function Confirm() {
         <div className="overlay"></div>
         <div className="modal-content">
           <h3 className="modal-text">Transaction Failed</h3>
-          <a href="/swap" className="close-modal">close</a>
+          <div className="flex-container2">
+            <a href="/" className="btn btn-primary btn-m2">home</a>
+            <a href="/swap" className="btn btn-primary btn-m2">swap</a>
+            <a href="/wallet" className="btn btn-primary btn-m2">wallet</a>
+          </div>
         </div>
         </div>
       )}

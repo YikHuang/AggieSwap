@@ -66,6 +66,7 @@ body{
   align-items: center;
   justify-content: center;
 }
+
 .flex-container3 {
   position: absolute;
   left: 50%;
@@ -262,7 +263,19 @@ body{
   max-width: 400px;
   min-width: 300px;
 }
-
+.modal-content2 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding-top: 55px;
+  border-radius: 3px;
+  max-width: 400px;
+  min-width: 300px;
+  max-height: 170px;
+}
 .close-modal {
   position: absolute;
   top: 10px;
@@ -11636,6 +11649,7 @@ body {
 }
 
 .btn-m {
+  max-height: 300;
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
   font-weight: 500;
@@ -11644,6 +11658,18 @@ body {
   border-radius: 10rem;
   margin-top: 50px;
 }
+
+.btn-m2 {
+  max-width: 80px;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10rem;
+  /* margin-top: 50px; */
+}
+
 
 hr.divider {
   height: 0.2rem;
