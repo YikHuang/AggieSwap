@@ -20,36 +20,36 @@ function Confirm() {
 
   return (
     <>
-      <div className="flex-container container row-cols-md-auto text-center">
-        <div>
-          <h2>{paidAmt} {paidCurrency}<img src={arrow} width="28px" height="28px"/>
-          {receivedAmt} {receivedCurrency}</h2>
-          <h3>
-            Transaction Fee: {transactionFee} {transactionFeeCurrency}
-          </h3>
-          <h3>Max Slippage: 0.3%</h3>
+      <div className="flex-container">
+        <div className="flex-container container row-cols-md-auto text-center">
+          <div>
+            <h2>{paidAmt} {paidCurrency}<img src={arrow} width="28px" height="28px"/>
+            {receivedAmt} {receivedCurrency}</h2>
+            <h3>
+              Transaction Fee: {transactionFee} {transactionFeeCurrency}
+            </h3>
+            <h3>Max Slippage: 0.3%</h3>
+          </div>
+          <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+            <p class="text-white-75 mb-5"></p>        
+            <p class="text-white-75 mb-5">If the information above is right, please login again</p>        
+          </div>
+          <div id="warpper-transac-text-box">
+            {/* <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input> */}
+            <input id="textsize" type="text" ref={addrRef} className="transactionTextbox" />
+            <span id="currency-text">ID</span>
+          </div>
+          <div id="warpper-transac-text-box">
+            {/* <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input> */}
+            <input id="textsize" type="text" ref={privateKeyRef} className="transactionTextbox" />
+              <span id="currency-text">Password</span>
+          </div>
         </div>
-        <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-          <p class="text-white-75 mb-5"></p>        
-          <p class="text-white-75 mb-5">If the information above is right, please login again</p>        
-        </div>
-        <div id="warpper-transac-text-box">
-          {/* <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input> */}
-          <input id="textsize" type="text" ref={addrRef} className="transactionTextbox" />
-          <span id="currency-text">ID</span>
-        </div>
-        <div id="warpper-transac-text-box">
-          {/* <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input> */}
-          <input id="textsize" type="text" ref={privateKeyRef} className="transactionTextbox" />
-            <span id="currency-text">Password</span>
-        </div>
-        
       </div>
       <div class="flex-container3">
-        <button className="btn btn-primary btn-xl" onClick={(e) => SendSwapRequest(e)}>Confirm</button>
-        <a href="/swap" className="btn btn-primary btn-xl">Cancel</a>
+          <button className="btn btn-primary btn-xl" onClick={(e) => SendSwapRequest(e)}>Confirm</button>
+          <a href="/swap" className="btn btn-primary btn-xl">Cancel</a>
       </div>
-
 
 
       {successfulDialog && (
