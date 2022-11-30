@@ -144,7 +144,11 @@ body{
   justify-content:center;
   align-items:center; 
 }
-
+#img-space2{
+  margin-top: 12px;
+  justify-content:center;
+  align-items:center; 
+}
 #warpper-transac-text-box {
   display: inline-block;
   position: relative;

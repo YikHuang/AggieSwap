@@ -22,7 +22,7 @@ function Swap() {
             <span id="currency-text">XRD</span>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
-            <img src={exchange} width="50px" height="50px" />
+            <img id="img-space2" src={exchange} width="50px" height="50px" />
           </div>
           <div id="warpper-transac-text-box">
             <input id="textsize" type="text" className="transactionTextbox" value={payment.receivedAmt} readOnly></input>
