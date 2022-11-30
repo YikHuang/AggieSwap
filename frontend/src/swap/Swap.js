@@ -2,6 +2,7 @@ import Currency from "./Currency"
 import { useState, useRef } from "react";
 import Axios from 'axios';
 import exchange from './exchange.png';
+import nextbutton from './nextbutton.png';
 
 function Swap() {
   const [payment, setPayment] = useState({paidAmt: 0, paidCurrency: "", receivedAmt: "", receivedCurrency: "", rate: 0});
@@ -38,20 +39,24 @@ function Swap() {
             <a href="/" className="btn btn-primary btn-xl">Cancel</a>
         </div>
       </div>
-      
+    
+
       {transactionFeeDialog && (
-        <div className="modal-popup">
+
+        <div className="modal-popup align-content-center">
         <div className="overlay"></div>
         <div className="modal-content center">
           <h3 className="modal-text">Transaction Fee : {transactionFee.fee} {transactionFee.currency}</h3>
           <a href={"/confirm?paidAmt=" + payment.paidAmt + "&paidCurrency=" + payment.paidCurrency + 
                   "&receivedAmt=" + payment.receivedAmt + "&receivedCurrency=" + payment.receivedCurrency + 
-                  "&transactionFee=" + transactionFee.fee + "&transactionFeeCurrency=" + transactionFee.currency} className="close-modal">close</a>
+                  "&transactionFee=" + transactionFee.fee + "&transactionFeeCurrency=" + transactionFee.currency} className="nextbutton"><img src={nextbutton} width="50px" height="50px"/></a>
 
 
         </div>
         </div>
       )}
+
+
     </>
     
   )

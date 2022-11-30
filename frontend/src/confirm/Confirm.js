@@ -84,7 +84,7 @@ function Confirm() {
     const privateKey = privateKeyRef.current.value;
 
     const request = {apiName: apiName, accountAddr: accountAddr, privateKey: privateKey, 
-      amt: paidAmt, fee: transactionFee.fee, from: paidCurrency, to: receivedCurrency};
+      amt: paidAmt, fee: transactionFee, from: paidCurrency, to: receivedCurrency};
     console.log(request);
     
     await Axios

@@ -198,8 +198,22 @@ body{
   cursor: pointer;
 }
 
+.modal-popup {
+  justify-content:center;
+  align-items:center; 
+  
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  border-radius:10px;
+}
 
-.modal-popup, .overlay {
+
+.overlay {
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -221,13 +235,21 @@ body{
   background: #f1f1f1;
   padding: 50px 60px;
   border-radius: 3px;
-  max-width: 600px;
+  max-width: 400px;
   min-width: 300px;
 }
 
 .close-modal {
   position: absolute;
   top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+  color:#000000;
+}
+
+.nextbutton {
+  position: absolute;
+  top: 33px;
   right: 10px;
   padding: 5px 7px;
   color:#000000;
@@ -11639,8 +11661,8 @@ hr.divider-light {
     background-color: #6c757d;  /*====================================== background*/
   }
   #mainNav .navbar-brand {  /*====================================== font*/
-    color: #fff;
-    text-shadow: -2px 0 #252626, 0 2px #252626, 2px 0 #252626, 0 -2px #252626;
+    color: #ffffff;
+    text-shadow: -2px 0 #292941, 0 2px #292941, 2px 0 #292941, 0 -2px #292941;
     font-weight: bold;
     font-size: 30px;
     /* color: rgba(255, 255, 255, 0.7);  */
