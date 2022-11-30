@@ -4,10 +4,10 @@ function AccountInfo({ accountInfo }) {
     return (
       <div>
         <h3>
-          Address : {accountInfo.addr}
+          ID : {accountInfo.addr}
         </h3>
         <h3>
-          Private Key : {accountInfo.privateKey}
+          Password : {accountInfo.privateKey}
         </h3>        
       </div>
     );

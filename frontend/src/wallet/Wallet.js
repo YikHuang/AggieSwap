@@ -7,6 +7,11 @@ function Wallet() {
   const privateKeyRef = useRef();
   const [balance, setBalance] = useState({xrdAmt: "", aggieSwapAmt: ""});
 
+
+  const [successfulDialog, setSuccessfulDialog] = useState(false);
+  const [failedDialog, setFailedDialog] = useState(false);
+
+
   return (
     <>
       {/* <div class="flex-container2 container px-4 px-lg-5">
@@ -23,6 +28,8 @@ function Wallet() {
       </div>
       
       <Balance balance={balance}/> */}
+
+
 
       <div class="center">
         <div class="flex-container2 container row-cols-md-auto text-center">  
@@ -49,12 +56,39 @@ function Wallet() {
           <button className="btn btn-primary btn-xl" onClick={(e) => SendGetAccountInfo(e)}>Get Balance</button>
           <a href="/" className="btn btn-primary btn-xl">Cancel</a>
         </div>
-        <div>
-          <Balance balance={balance}/>
+        <div class="flex-container4 row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+          {/* <p class="text-white-75 mb-5"><Balance balance={balance}/></p> */}
         </div>
       </div>
+
+      {successfulDialog && (
+    <div className="modal-popup">
+    <div className="overlay"></div>
+    <div className="modal-content">
+      <h3 className="modal-text">XRD: {balance.xrdAmt}</h3>
+      <a href="/wallet" className="close-modal">close</a>
+    </div>
+    </div>
+  )}
+  
+  {failedDialog && (
+    <div className="modal-popup">
+    <div className="overlay"></div>
+    <div className="modal-content">
+      <h3 className="modal-text">No account found</h3>
+      <a href="/wallet" className="close-modal">close</a>
+    </div>
+    </div>
+  )}
+
+
     </>
   )
+
+
+  
+
+
 
   async function SendGetAccountInfo(){
 
@@ -69,9 +103,19 @@ function Wallet() {
       .then(res => {
         response = res.data;
         setBalance({xrdAmt: response.xrdAmt, aggieSwapAmt: response.aggieSwapAmt});
+
+        setSuccessfulDialog(true);
+
+        // if(response.isSuccessful == true){
+        //   setSuccessfulDialog(true);
+        // }
+        // else{
+        //   setFailedDialog(true);
+        // }
       })
       .catch(error => {
         console.log(error);
+        setFailedDialog(true);
       });
 
     console.log(response);
