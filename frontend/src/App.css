@@ -125,6 +125,15 @@ body{
   width : 50%;
   height : 500px; */
 }
+
+
+#textsize {
+  width:400px;
+  height:70px;
+  font-size:20px;
+}
+
+
 #warpper-transac-text-box {
   display: inline-block;
   position: relative;

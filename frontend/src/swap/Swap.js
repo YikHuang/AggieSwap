@@ -15,14 +15,14 @@ function Swap() {
       <div class="flex-container container px-4 px-lg-5">  
       <h1 class="text-white font-weight-bold">Swap</h1>
         <div id="warpper-transac-text-box">
-          <input onChange={(e) => handlePaymentInput(e)} type="number" ref={paymentRef} className="transactionTextbox" />
+          <input id="textsize" onChange={(e) => handlePaymentInput(e)} type="text" ref={paymentRef} className="transactionTextbox" />
           <span id="currency-text">XRD</span>
         </div>
         <div class="col-lg-3 col-md-6 text-center">
           <img src={exchange} width="50px" height="50px" />
         </div>
         <div id="warpper-transac-text-box">
-          <input type="number" className="transactionTextbox" value={payment.receivedAmt} readOnly></input>
+          <input id="textsize" type="text" className="transactionTextbox" value={payment.receivedAmt} readOnly></input>
           <span id="currency-text">AggieToken</span>
         </div>
         

@@ -37,12 +37,12 @@ function Confirm() {
         </div>
         <div id="warpper-transac-text-box">
           {/* <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input> */}
-          <input type="text" ref={addrRef} className="transactionTextbox" />
+          <input id="textsize" type="text" ref={addrRef} className="transactionTextbox" />
           <span id="currency-text">ID</span>
         </div>
         <div id="warpper-transac-text-box">
           {/* <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input> */}
-          <input type="text" ref={privateKeyRef} className="transactionTextbox" />
+          <input id="textsize" type="text" ref={privateKeyRef} className="transactionTextbox" />
             <span id="currency-text">Password</span>
         </div>
         

@@ -37,7 +37,7 @@ function Wallet() {
           <div id="warpper-transac-text-box">
             {/* <h3>Account Address</h3> */}
             {/* <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input> */}
-            <input type="text" ref={addrRef} className="transactionTextbox" />
+            <input id="textsize" type="text" ref={addrRef} className="transactionTextbox" />
             <span id="currency-text">ID</span>
           </div>
           <div class="col-lg-3 row-cols-md-auto text-center">
@@ -48,7 +48,7 @@ function Wallet() {
           <div id="warpper-transac-text-box">
             {/* <h3>Private Key</h3> */}
             {/* <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input> */}
-            <input type="text" ref={privateKeyRef} className="transactionTextbox" />
+            <input id="textsize" type="text" ref={privateKeyRef} className="transactionTextbox" />
             <span id="currency-text">Password</span>
           </div>
         </div>
@@ -107,12 +107,6 @@ function Wallet() {
 
         setSuccessfulDialog(true);
 
-        // if(response.isSuccessful == true){
-        //   setSuccessfulDialog(true);
-        // }
-        // else{
-        //   setFailedDialog(true);
-        // }
       })
       .catch(error => {
         console.log(error);
