@@ -23,7 +23,7 @@ function Confirm() {
     <>
       <div className="flex-container container row-cols-md-auto text-center">
         <div>
-          <h2>{paidAmt} {paidCurrency}<img src={arrow} width="28px" height="28px" />
+          <h2>{paidAmt} {paidCurrency}<img src={arrow} width="28px" height="28px"/>
           {receivedAmt} {receivedCurrency}</h2>
           <h3>
             Transaction Fee: <TransactionFee transactionFee={transactionFee}/>
