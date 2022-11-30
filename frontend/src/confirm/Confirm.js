@@ -2,14 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Axios from 'axios';
 import arrow from './arrow.png';
-import TransactionFee from './TransactionFee';
 
 function Confirm() {
   const [payment, setPayment] = useSearchParams();
-  const [transactionFee, setTransactionFee] = useState({fee: "", currency: ""});
   const [successfulDialog, setSuccessfulDialog] = useState(false);
   const [failedDialog, setFailedDialog] = useState(false);
-  const [transactionFeeButton, setTransactionFeeButton] = useState(true);
   const addrRef = useRef();
   const privateKeyRef = useRef();
 
@@ -17,6 +14,8 @@ function Confirm() {
   const paidCurrency = payment.get('paidCurrency');
   const receivedAmt = payment.get('receivedAmt');
   const receivedCurrency = payment.get('receivedCurrency');
+  const transactionFee = payment.get('transactionFee');
+  const transactionFeeCurrency = payment.get('transacionFeeCurrency');
 
 
   return (
@@ -26,8 +25,7 @@ function Confirm() {
           <h2>{paidAmt} {paidCurrency}<img src={arrow} width="28px" height="28px"/>
           {receivedAmt} {receivedCurrency}</h2>
           <h3>
-            Transaction Fee: <TransactionFee transactionFee={transactionFee}/>
-            {transactionFeeButton && <button onClick={(e) => SendGetTransacFeeRequest(e)}>Show Transaction Fee</button>}
+            Transaction Fee: {transactionFee} {transactionFeeCurrency}
           </h3>
           <h3>Max Slippage: 0.3%</h3>
         </div>
@@ -75,30 +73,6 @@ function Confirm() {
 
     </>
   )
-
-
-  async function SendGetTransacFeeRequest(){
-
-    var response;
-    const url = "http://localhost:3005/getTransacFee";
-    const apiName = "getTransacFee";
-    const request = {apiName: apiName};
-    console.log(request);
-    
-    await Axios
-      .post(url, request)
-      .then(res => {
-        response = res.data;
-        setTransactionFee({fee: response.fee, currency: response.currency});
-        setTransactionFeeButton(false);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-
-    console.log(response);
-
-  }  
 
   async function SendSwapRequest(e){
     e.preventDefault();
