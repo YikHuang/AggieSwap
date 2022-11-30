@@ -66,6 +66,7 @@ function Wallet() {
     <div className="overlay"></div>
     <div className="modal-content">
       <h3 className="modal-text">XRD: {balance.xrdAmt}</h3>
+      <h3 className="modal-text">AggieToken: {balance.aggieSwapAmt}</h3>
       <a href="/wallet" className="close-modal">close</a>
     </div>
     </div>
