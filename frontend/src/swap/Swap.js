@@ -42,12 +42,13 @@ function Swap() {
       {transactionFeeDialog && (
         <div className="modal-popup">
         <div className="overlay"></div>
-        <div className="modal-content">
+        <div className="modal-content center">
           <h3 className="modal-text">Transaction Fee : {transactionFee.fee} {transactionFee.currency}</h3>
           <a href={"/confirm?paidAmt=" + payment.paidAmt + "&paidCurrency=" + payment.paidCurrency + 
                   "&receivedAmt=" + payment.receivedAmt + "&receivedCurrency=" + payment.receivedCurrency + 
-                  "&transactionFee=" + transactionFee.fee + "&transactionFeeCurrency=" + transactionFee.currency} 
-                  className="btn btn-primary btn-xl">Next Page</a>
+                  "&transactionFee=" + transactionFee.fee + "&transactionFeeCurrency=" + transactionFee.currency} className="close-modal">close</a>
+
+
         </div>
         </div>
       )}
