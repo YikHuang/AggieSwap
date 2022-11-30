@@ -17,7 +17,7 @@ body{
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: #252626;
+  background-color: #292941;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -43,7 +43,7 @@ body{
   padding: 6px;
 }
 .navbar a:hover {
-  color: #f5c2c7;
+  color: #7473ff;
 }
 
 
@@ -184,7 +184,7 @@ body{
   -moz-appearance: button;
   appearance: button;
   color: 'white';
-  background-color: #f5c2c7;
+  background-color: #7473ff;
   border-radius: 16px;
   text-decoration: none;
   font-size: 36px;
@@ -3302,8 +3302,8 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #fff;
-  background-color: #f4623a;
-  border-color: #f4623a;
+  background-color: #dc3545;
+  border-color: #dc3545;
   justify-content: center;
   margin:5px;
 }
@@ -3311,6 +3311,7 @@ textarea.form-control-lg {
   color: #252626;
   background-color: #f5c2c7;
   border-color: #f5c2c7;
+  opacity: 0.8;
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
@@ -5156,7 +5157,7 @@ textarea.form-control-lg {
   border-top-right-radius: 0.2rem;
   border-bottom-right-radius: 0.2rem;
 }
-
+/* 
 .badge {
   display: inline-block;
   padding: 0.35em 0.65em;
@@ -5275,7 +5276,7 @@ textarea.form-control-lg {
 }
 .alert-dark .alert-link {
   color: #101214;
-}
+} */
 
 @-webkit-keyframes progress-bar-stripes {
   0% {
@@ -11587,6 +11588,16 @@ body {
   border-radius: 10rem;
 }
 
+.btn-m {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10rem;
+  margin-top: 50px;
+}
+
 hr.divider {
   height: 0.2rem;
   max-width: 3.25rem;
@@ -11628,7 +11639,7 @@ hr.divider-light {
     background-color: #6c757d;  /*====================================== background*/
   }
   #mainNav .navbar-brand {  /*====================================== font*/
-    color: #ffffff;
+    color: #fff;
     text-shadow: -2px 0 #252626, 0 2px #252626, 2px 0 #252626, 0 -2px #252626;
     font-weight: bold;
     font-size: 30px;
