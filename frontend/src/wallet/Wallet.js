@@ -1,6 +1,5 @@
 import { useRef, useState } from "react"
 import Axios from "axios";
-import Balance from "./Balance";
 
 function Wallet() {
   const addrRef = useRef();
@@ -38,7 +37,7 @@ function Wallet() {
             {/* <h3>Account Address</h3> */}
             {/* <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input> */}
             <input id="textsize" type="text" ref={addrRef} className="transactionTextbox" />
-            <span id="currency-text">ID</span>
+            <span id="account-text">ID</span>
           </div>
           <div class="col-lg-3 row-cols-md-auto text-center">
             {/* <h1>=&gt;</h1> */}
@@ -49,7 +48,7 @@ function Wallet() {
             {/* <h3>Private Key</h3> */}
             {/* <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input> */}
             <input id="textsize" type="text" ref={privateKeyRef} className="transactionTextbox" />
-            <span id="currency-text">Password</span>
+            <span id="account-text">Password</span>
           </div>
         </div>
         <div class="flex-container2 container px-4 px-lg-5">
@@ -66,7 +65,7 @@ function Wallet() {
     <div className="overlay"></div>
     <div className="modal-content">
       <h3 className="modal-text">XRD: {balance.xrdAmt}</h3>
-      <h3 className="modal-text">AggieToken: {balance.aggieSwapAmt}</h3>
+      <h3 className="modal-text">AGS: {balance.aggieSwapAmt}</h3>
       <a href="/wallet" className="close-modal">close</a>
     </div>
     </div>

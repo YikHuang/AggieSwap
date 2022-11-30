@@ -26,7 +26,7 @@ function Swap() {
           </div>
           <div id="warpper-transac-text-box">
             <input id="textsize" type="text" className="transactionTextbox" value={payment.receivedAmt} readOnly></input>
-            <span id="currency-text">AggieToken</span>
+            <span id="currency-text">AGS</span>
           </div>
           
         </div>

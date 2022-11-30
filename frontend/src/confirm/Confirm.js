@@ -23,7 +23,7 @@ function Confirm() {
       <div className="flex-container">
         <div className="flex-container container row-cols-md-auto text-center">
           <div>
-            <h2>{paidAmt} {paidCurrency}<img src={arrow} width="28px" height="28px"/>
+            <h2>{paidAmt} {paidCurrency}<img id="img-space" src={arrow} width="28px" height="28px"/>
             {receivedAmt} {receivedCurrency}</h2>
             <h3>
               Transaction Fee: {transactionFee} {transactionFeeCurrency}
@@ -37,12 +37,12 @@ function Confirm() {
           <div id="warpper-transac-text-box">
             {/* <input type="text" className="transactionTextbox" ref={addrRef} placeholder="Account Address"></input> */}
             <input id="textsize" type="text" ref={addrRef} className="transactionTextbox" />
-            <span id="currency-text">ID</span>
+            <span id="account-text">ID</span>
           </div>
           <div id="warpper-transac-text-box">
             {/* <input type="text" className="transactionTextbox" ref={privateKeyRef} placeholder="Private Key"></input> */}
             <input id="textsize" type="text" ref={privateKeyRef} className="transactionTextbox" />
-              <span id="currency-text">Password</span>
+              <span id="account-text">Password</span>
           </div>
         </div>
       </div>
