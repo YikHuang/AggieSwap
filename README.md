@@ -1,5 +1,11 @@
 # AggieSwap
 
+## Demo Video
+- https://youtu.be/zgpx2hk4nSE
+
+## Blog
+- https://medium.com/@fuhsinliao/3db7f7953b66
+
 ## Frontend
 - To run Frontend (run by terminal)
     1. Go to the frontend folder
