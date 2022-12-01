@@ -179,7 +179,7 @@ def get_currency():
     # Dictionary for JSON reponse 
     result_dict = { 
         "amt" : "",
-        "currency":"AggieToken"
+        "currency":"AGS" #############################
     }
 
     if component_value == "":
@@ -201,7 +201,7 @@ def get_currency():
             currency_value = currency_value.replace('")', '')
             currency_value.replace('\\"', '"')
 
-    currency_value = 1/int(currency_value)
+    currency_value = 1/float(currency_value)#####
 
     result_dict['amt'] = str(currency_value)
 
