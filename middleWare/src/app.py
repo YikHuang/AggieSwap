@@ -9,6 +9,7 @@ import json
 import logging
 import sys
 import os
+# For Handling HTTP CORS
 from flask_cors import CORS
 
 # Basic Flask settings
@@ -42,7 +43,8 @@ def conver_to_JSON(input_str):
 
 
 def get_component_value():
-    print('get_component_value function')
+    print('[INFO] Initialize Radix settings and renew component value')
+    print('[INFO][Radix] resim publish ../../radixEngine/davis/ ')
     # Commmnad: $ resim reset
     subprocess.Popen( 
             ["resim", "reset"],
@@ -81,7 +83,8 @@ def get_component_value():
 
 
 def get_component_value_swap():
-    print('get_component_value function')
+    print('[INFO] Initialize Radix settings and renew component value')
+    print('[INFO][Radix] resim publish ../../radixEngine/davis/ ')
     # Commmnad: $ resim reset
 
     # Command: $ resim publish .
@@ -106,7 +109,7 @@ def get_component_value_swap():
             tmp_component_value = result_output.split(': ')
             tmp_component_value = str(tmp_component_value[1])
 
-    print('New component value: ', tmp_component_value)
+    print('[INFO] New component value: ', tmp_component_value)
     return tmp_component_value
 
 # Add Response header parameters and values
@@ -114,14 +117,22 @@ def make_JSON_response(raw_reponse):
     r = make_response(raw_reponse)
     r.headers['Access-Control-Allow-Origin'] = '*'
 
-    print(r)
+    print('[INFO] Middleware respone information')
+    response_str = r.get_data().decode('utf-8')
+    print(response_str)
 
     return r
 
-# Create Account 
+def debug_user_request(JSON_request):
+    print('[INFO] Client request information')
+    print(JSON_request)
+
+
+# [Radix] Create New Account 
 @app.route('/createAccount', methods=['POST'])
 def create_account():
     client_req = request.get_json()
+    debug_user_request(client_req)
 
     if client_req["apiName"] != "createAccount":
         return Response(
@@ -159,18 +170,18 @@ def create_account():
     # JSON response
     return make_JSON_response(response_json)
 
-# Get Currency 
+# [Radix] Get Currency 
 @app.route('/getCurrency', methods=['POST'])
 def get_currency():
     global component_value
-    print('component_value : ', component_value)
 
     client_req = request.get_json()
+    debug_user_request(client_req)
 
     if( client_req["apiName"] != "getCurrency" or 
         client_req["baseCur"] != "XRD" ):
         return Response(
-                "Wrong createAccount request",
+                "Wrong getCurrency request",
                 status=400,
             )
 
@@ -183,10 +194,7 @@ def get_currency():
     }
 
     if component_value == "":
-        print('Make new component value')
         component_value = get_component_value()
-
-    print("In the function : ", component_value)
 
     get_price_result = subprocess.Popen( 
             ["resim", "call-method", component_value, "get_price"],
@@ -210,11 +218,13 @@ def get_currency():
     # JSON reponse
     return make_JSON_response(response_json)
 
-# Get Transaction Fee
+# [Radix] Get Transaction Fee
 @app.route('/getTransacFee', methods=['POST'])
 def get_transac_fee():
     global component_value
+
     client_req = request.get_json()
+    debug_user_request(client_req)
 
     if client_req["apiName"] != "getTransacFee":
         return Response(
@@ -252,11 +262,13 @@ def get_transac_fee():
     # JSON response
     return make_JSON_response(response_json)
 
-# Swap
+# [Radix] Swap
 @app.route('/swap', methods=['POST'])
 def swap():
     global component_value
+
     client_req = request.get_json()
+    debug_user_request(client_req)
 
     if(client_req["apiName"] != "swap" or
        client_req["accountAddr"] == "" or 
@@ -266,7 +278,7 @@ def swap():
        client_req["from"] == "" or 
        client_req["to"] == "") :
         return Response(
-                "Wrong createAccount request",
+                "Wrong Swap request",
                 status=400,
             )
 
@@ -292,8 +304,6 @@ def swap():
     set_def_account_result = splitting_command_results(set_def_account_result)
     set_def_account_result = set_def_account_result[0]
 
-    print('in Swap component_value :', component_value)
-
     # Command: $resim show $account_value$
     show_account_result = subprocess.Popen( 
             #["resim", "show", account_info_value], 
@@ -306,31 +316,24 @@ def swap():
     if component_value == "":
         component_value = get_component_value()
 
-    print(splitted_show_result)
-    # Get Xrd and aggieswap amt value
+    # Get Xrd and Aggieswap amt value
     for result_str in reversed(splitted_show_result):
         if ("resource address" in result_str) and ("Radix" in result_str):
             xrd_val_list = result_str.split(', ')
             xrd_val_tmp = xrd_val_list[1].split(': ')    
             xrd_val = xrd_val_tmp[1]
-            print('xrd val: ', xrd_val)
 
     buy_param = buy_amt+','+xrd_val
-    print('buy_parameter : ', buy_param)
     fee_param = tx_fee+','+xrd_val
-    print('receiver_parameter : ', fee_param)
 
     swap_result = subprocess.Popen(
             ["resim" , "call-method", component_value, "buy_token", buy_param, fee_param],
             stdout=subprocess.PIPE
         )
 
-    print(swap_result)
     swap_result = splitting_command_results(swap_result)
-    print(swap_result)
 
     for result_str in swap_result:
-        print(result_str)
         if( "Transaction Status:" in result_str):
             if("REJECTED" in result_str):
                 result_dict['isSuccessful'] = False     
@@ -342,10 +345,11 @@ def swap():
     # JSON response
     return make_JSON_response(response_json)
 
-# Get Account Information
+# [Radix] Get Account Information
 @app.route('/getAccountInfo', methods=['POST'])
 def get_account_info():
     client_req = request.get_json()
+    debug_user_request(client_req)
 
     if ( client_req["apiName"] != "getAccountInfo" or client_req["accountAddr"] == "" ):
         
@@ -355,8 +359,7 @@ def get_account_info():
             )
 
     account_info = client_req["accountAddr"]
-
-    print('account info : ', account_info)
+    print('[INFO] New account information: ', account_info)
 
     if len(account_info) != 62:
         return Response(
